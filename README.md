@@ -25,11 +25,11 @@ nosql-challenge/
 
 ### Part 1: Database and Jupyter Notebook Set Up
 
-In this section, I successfully set up a MongoDB database and imported the provided establishments.json data for analysis.
+In this section, I successfully set up a MongoDB database and imported the provided `establishments.json` data for analysis.
 
 1. Data Import:
 
-   - The data was imported into a MongoDB database named uk_food and the collection was named establishments.
+   - The data was imported into a MongoDB database named `uk_food` and the collection was named `establishments`.
    - The command used for import was:
      ```
      mongoimport --type json -d uk_food -c establishments --drop --jsonArray D:\Data_Boot_Camp\Module_12_challenge\nosql-challenge\Resources\establishments.json
@@ -42,7 +42,7 @@ In this section, I successfully set up a MongoDB database and imported the provi
 
 3. Data Verification:
 
-   - I confirmed the creation of the 'uk_food' database and the presence of the 'establishments' collection.
+   - I confirmed the creation of the `uk_food` database and the presence of the `establishments` collection.
    - I successfully displayed a sample document from the collection to ensure the data was loaded correctly.
 
 ### Part 2: Update the Database
@@ -73,7 +73,7 @@ In this section, I made several updates to the database as requested by the maga
 
 2. Updating BusinessTypeID:
 
-   - I identified the BusinessTypeID for "Restaurant/Cafe/Canteen" and updated the "Penang Flavours" document with this ID.
+   - I identified the `BusinessTypeID` for "Restaurant/Cafe/Canteen" and updated the "Penang Flavours" document with this ID.
 
 3. Removing Dover Establishments:
 
@@ -82,8 +82,8 @@ In this section, I made several updates to the database as requested by the maga
 
 4. Data Type Corrections:
 
-   - Latitude and longitude fields were converted from strings to decimal numbers using the update_many method.
-   - The RatingValue field was converted from strings to integers, handling any non-numeric values appropriately.
+   - Latitude and longitude fields were converted from strings to decimal numbers using the `update_many` method.
+   - The `RatingValue` field was converted from strings to integers, handling any non-numeric values appropriately.
 
 ### Part 3: Exploratory Analysis
 
@@ -96,13 +96,13 @@ This section involved performing specific queries to answer questions for Eat Sa
 
 2. High-Rated Establishments in London:
 
-   - I found establishments in London with a 'RatingValue' of 4 or higher.
+   - I found establishments in London with a `RatingValue` of 4 or higher.
    - The search used a regular expression to accommodate various names for the London Local Authority.
    - The query identified 34 establishments meeting the criteria, with details displayed in a DataFrame.
 
 3. Top Establishments Near "Penang Flavours":
 
-   - I identified the top 5 establishments with a 'RatingValue' of 5, sorted by the lowest hygiene score, near "Penang Flavours".
+   - I identified the top 5 establishments with a `RatingValue` of 5, sorted by the lowest hygiene score, near "Penang Flavours".
    - The nearest locations were determined by comparing geocode coordinates within 0.01 degrees of latitude and longitude.
    - The results showed 5 establishments meeting these criteria, displayed in a DataFrame.
 
@@ -116,7 +116,7 @@ This section involved performing specific queries to answer questions for Eat Sa
 1. Clone this repository to your local machine
 2. Open the Jupyter Notebook:
    - Navigate to the project directory and open the Jupyter Notebook files.
-   - Open NoSQL_setup.ipynb for Parts 1 and 2, and NoSQL_analysis.ipynb for Part 3.
+   - Open `NoSQL_setup.ipynb` for Parts 1 and 2, and `NoSQL_analysis.ipynb` for Part 3.
 3. Run the Notebook:
    - Execute each cell in sequence to perform the database setup, updates, and analysis.
 
