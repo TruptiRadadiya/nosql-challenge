@@ -29,19 +29,21 @@ In this section, I successfully set up a MongoDB database and imported the provi
 
 1. Data Import:
 
-- The data was imported into a MongoDB database named uk_food and the collection was named establishments.
-- The command used for import was:
-  `mongoimport --type json -d uk_food -c establishments --drop --jsonArray D:\Data_Boot_Camp\Module_12_challenge\nosql-challenge\Resources\establishments.json`
+   - The data was imported into a MongoDB database named uk_food and the collection was named establishments.
+   - The command used for import was:
+     ```
+     mongoimport --type json -d uk_food -c establishments --drop --jsonArray D:\Data_Boot_Camp\Module_12_challenge\nosql-challenge\Resources\establishments.json
+     ```
 
 2. Notebook Initialization:
 
-- Libraries such as PyMongo and Pretty Print (pprint) were imported to interact with MongoDB and format outputs.
-- An instance of the MongoClient was created, and a connection to the uk_food database was established.
+   - Libraries such as PyMongo and Pretty Print (pprint) were imported to interact with MongoDB and format outputs.
+   - An instance of the MongoClient was created, and a connection to the uk_food database was established.
 
 3. Data Verification:
 
-- I confirmed the creation of the uk_food database and the presence of the establishments collection.
-- I successfully displayed a sample document from the collection to ensure the data was loaded correctly.
+   - I confirmed the creation of the 'uk_food' database and the presence of the 'establishments' collection.
+   - I successfully displayed a sample document from the collection to ensure the data was loaded correctly.
 
 ### Part 2: Update the Database
 
@@ -49,39 +51,39 @@ In this section, I made several updates to the database as requested by the maga
 
 1. Adding New Establishment:
 
-- A new halal restaurant, "Penang Flavours," was added to the establishments collection with the following details:
+   - A new halal restaurant, "Penang Flavours," was added to the establishments collection with the following details:
 
-```
-  {
-  "BusinessName": "Penang Flavours",
-  "BusinessType": "Restaurant/Cafe/Canteen",
-  "BusinessTypeID": "",
-  "AddressLine1": "Penang Flavours",
-  "AddressLine2": "146A Plumstead Rd",
-  "AddressLine3": "London",
-  "PostCode": "SE18 7DY",
-  "LocalAuthorityName": "Greenwich",
-  "geocode": {
-  "longitude": "0.08384000",
-  "latitude": "51.49014200"
-  },
-  "NewRatingPending": true
-  }
-```
+   ```
+     {
+        "BusinessName": "Penang Flavours",
+        "BusinessType": "Restaurant/Cafe/Canteen",
+        "BusinessTypeID": "",
+        "AddressLine1": "Penang Flavours",
+        "AddressLine2": "146A Plumstead Rd",
+        "AddressLine3": "London",
+        "PostCode": "SE18 7DY",
+        "LocalAuthorityName": "Greenwich",
+        "geocode": {
+            "longitude": "0.08384000",
+            "latitude": "51.49014200"
+            },
+        "NewRatingPending": true
+     }
+   ```
 
 2. Updating BusinessTypeID:
 
-- I identified the BusinessTypeID for "Restaurant/Cafe/Canteen" and updated the "Penang Flavours" document with this ID.
+   - I identified the BusinessTypeID for "Restaurant/Cafe/Canteen" and updated the "Penang Flavours" document with this ID.
 
 3. Removing Dover Establishments:
 
-- Establishments within the Dover Local Authority were counted and subsequently removed from the collection.
-- The removal was verified by recounting the documents to confirm the deletion.
+   - Establishments within the Dover Local Authority were counted and subsequently removed from the collection.
+   - The removal was verified by recounting the documents to confirm the deletion.
 
 4. Data Type Corrections:
 
-- Latitude and longitude fields were converted from strings to decimal numbers using the update_many method.
-- The RatingValue field was converted from strings to integers, handling any non-numeric values appropriately.
+   - Latitude and longitude fields were converted from strings to decimal numbers using the update_many method.
+   - The RatingValue field was converted from strings to integers, handling any non-numeric values appropriately.
 
 ### Part 3: Exploratory Analysis
 
@@ -89,25 +91,25 @@ This section involved performing specific queries to answer questions for Eat Sa
 
 1. Establishments with Hygiene Score 20:
 
-- I queried for establishments with a hygiene score of 20.
-- The query returned 41 establishments, which were displayed in a Pandas DataFrame.
+   - I queried for establishments with a hygiene score of 20.
+   - The query returned 41 establishments, which were displayed in a Pandas DataFrame.
 
 2. High-Rated Establishments in London:
 
-- I found establishments in London with a RatingValue of 4 or higher.
-- The search used a regular expression to accommodate various names for the London Local Authority.
-- The query identified 34 establishments meeting the criteria, with details displayed in a DataFrame.
+   - I found establishments in London with a 'RatingValue' of 4 or higher.
+   - The search used a regular expression to accommodate various names for the London Local Authority.
+   - The query identified 34 establishments meeting the criteria, with details displayed in a DataFrame.
 
 3. Top Establishments Near "Penang Flavours":
 
-- I identified the top 5 establishments with a RatingValue of 5, sorted by the lowest hygiene score, near "Penang Flavours".
-- The nearest locations were determined by comparing geocode coordinates within 0.01 degrees of latitude and longitude.
-- The results showed 5 establishments meeting these criteria, displayed in a DataFrame.
+   - I identified the top 5 establishments with a 'RatingValue' of 5, sorted by the lowest hygiene score, near "Penang Flavours".
+   - The nearest locations were determined by comparing geocode coordinates within 0.01 degrees of latitude and longitude.
+   - The results showed 5 establishments meeting these criteria, displayed in a DataFrame.
 
 4. Local Authorities with High Hygiene Issues:
 
-- Using aggregation, I counted the number of establishments with a hygiene score of 0 in each Local Authority.
-- The results were sorted from highest to lowest, revealing that the top Local Authority with the highest number of hygiene issues was Thanet, with 1,130 establishments.
+   - Using aggregation, I counted the number of establishments with a hygiene score of 0 in each Local Authority.
+   - The results were sorted from highest to lowest, revealing that the top Local Authority with the highest number of hygiene issues was Thanet, with 1,130 establishments.
 
 ### How to use the code?
 
