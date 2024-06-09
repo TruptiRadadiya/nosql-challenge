@@ -31,7 +31,7 @@ In this section, I successfully set up a MongoDB database and imported the provi
 
 - The data was imported into a MongoDB database named uk_food and the collection was named establishments.
 - The command used for import was:
-  'mongoimport --type json -d uk_food -c establishments --drop --jsonArray D:\Data_Boot_Camp\Module_12_challenge\nosql-challenge\Resources\establishments.json'
+  `mongoimport --type json -d uk_food -c establishments --drop --jsonArray D:\Data_Boot_Camp\Module_12_challenge\nosql-challenge\Resources\establishments.json`
 
 2. Notebook Initialization:
 
@@ -50,6 +50,8 @@ In this section, I made several updates to the database as requested by the maga
 1. Adding New Establishment:
 
 - A new halal restaurant, "Penang Flavours," was added to the establishments collection with the following details:
+
+```
   {
   "BusinessName": "Penang Flavours",
   "BusinessType": "Restaurant/Cafe/Canteen",
@@ -65,6 +67,7 @@ In this section, I made several updates to the database as requested by the maga
   },
   "NewRatingPending": true
   }
+```
 
 2. Updating BusinessTypeID:
 
